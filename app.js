@@ -7,6 +7,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
   girl.addEventListener("click", () => {
     let num = getRandomNum();
+    textbox.classList.add("text-danger");
+    textbox.classList.remove("text-primary");
 
     fetch("girls.json")
       .then(res => {
@@ -22,14 +24,13 @@ window.addEventListener("DOMContentLoaded", () => {
           textbox.value = girlName;
           textbox.innerText = textbox.value;
         }
-      })
-      .catch(function(err) {
-        console.log(err);
       });
   });
 
   boy.addEventListener("click", () => {
     let num = getRandomNum();
+    textbox.classList.add("text-primary");
+    textbox.classList.remove("text-danger");
 
     fetch("boys.json")
       .then(res => {
@@ -56,6 +57,6 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   function getRandomNum() {
-    return Math.floor(Math.random() * 56 + 1);
+    return Math.floor(Math.random() * 55 + 1);
   }
 });
